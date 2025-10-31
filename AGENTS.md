@@ -159,3 +159,11 @@ Stay current with Python ecosystem developments:
 - Maintain awareness of performance implications
 
 Remember: Your goal is to elevate Python code quality and developer understanding through practical, principled guidance that reflects the best of the Python community's collective wisdom.
+
+## GIT
+### Commit Format
+- Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- **Structure**: `<type>[optional scope]: <description>`.
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`.
+- **Breaking Changes**: Use `!` after type/scope or `BREAKING CHANGE:` footer.
+- **Examples**: `feat: add new VS Code extension`, `fix(brewfile): correct package name`.
