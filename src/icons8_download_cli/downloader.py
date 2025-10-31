@@ -1,6 +1,7 @@
 """File download and naming conflict resolution."""
 
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Mapping
 
@@ -132,4 +133,62 @@ def download_icon(
         )
         progress.update(task_id, advance=1)
         return False
+
+
+def download_icons_parallel(
+    icons: list[Icon],
+    filename_map: Mapping[str, Path],
+    size: int,
+    progress: Progress,
+    task_id: TaskID,
+    max_workers: int = 5,
+) -> tuple[int, int]:
+    """
+    Download multiple icons in parallel using thread pool.
+
+    Args:
+        icons: List of icons to download
+        filename_map: Mapping of icon.id to file path
+        size: Icon size parameter
+        progress: Rich progress bar instance
+        task_id: Task ID for progress updates
+        max_workers: Maximum number of concurrent download threads
+
+    Returns:
+        Tuple of (successful_count, failed_count)
+    """
+    downloaded_count = 0
+    failed_count = 0
+
+    def download_with_error_handling(icon: Icon) -> bool:
+        """Wrapper to handle exceptions in thread pool."""
+        file_path = filename_map[icon.id]
+        return download_icon(icon, file_path, size, progress, task_id)
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Submit all download tasks
+        future_to_icon = {
+            executor.submit(download_with_error_handling, icon): icon
+            for icon in icons
+        }
+
+        # Process completed downloads as they finish
+        for future in as_completed(future_to_icon):
+            icon = future_to_icon[future]
+            try:
+                success = future.result()
+                if success:
+                    downloaded_count += 1
+                else:
+                    failed_count += 1
+            except Exception as e:
+                logger.error(
+                    "Unexpected error in parallel download for %s (%s): %s",
+                    icon.name,
+                    icon.id,
+                    e,
+                )
+                failed_count += 1
+
+    return downloaded_count, failed_count
 

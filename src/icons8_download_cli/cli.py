@@ -10,7 +10,7 @@ from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
 from rich.table import Table
 
 from icons8_download_cli.api import fetch_all_icons
-from icons8_download_cli.downloader import download_icon, resolve_filenames
+from icons8_download_cli.downloader import download_icons_parallel, resolve_filenames
 from icons8_download_cli.models import Icon
 
 console = Console()
@@ -78,11 +78,18 @@ def setup_file_logging(target_directory: Path) -> None:
     default=None,
     help="Search query term (required if style is not provided)",
 )
+@click.option(
+    "--workers",
+    type=int,
+    default=10,
+    help="Number of parallel download threads (default: 10)",
+)
 def download(
     target_directory: Path | None,
     size: str,
     style: str | None,
     query: str | None,
+    workers: int,
 ) -> None:
     """
     Download icons from Icons8.com API.
@@ -108,7 +115,13 @@ def download(
 
     logger = logging.getLogger(__name__)
     logger.info("Starting download to: %s", target_directory)
-    logger.info("Parameters: size=%s, style=%s, query=%s", size, style, query)
+    logger.info(
+        "Parameters: size=%s, style=%s, query=%s, workers=%s",
+        size,
+        style,
+        query,
+        workers,
+    )
 
     console.print(f"\n[bold]Icons8 Download CLI[/bold]")
     console.print(f"Target directory: [cyan]{target_directory}[/cyan]")
@@ -117,6 +130,7 @@ def download(
         console.print(f"Style: [cyan]{style}[/cyan]")
     if query:
         console.print(f"Query: [cyan]{query}[/cyan]")
+    console.print(f"Parallel workers: [cyan]{workers}[/cyan]")
     console.print()
 
     # Fetch all icons with progress
@@ -162,10 +176,8 @@ def download(
     filename_map = resolve_filenames(all_icons, target_directory)
     console.print(f"[green]✓[/green] Resolved {len(filename_map)} filenames\n")
 
-    # Download icons with progress
+    # Download icons with progress (parallel)
     console.print("[yellow]Downloading icons...[/yellow]")
-    downloaded_count = 0
-    failed_count = 0
 
     with Progress(
         SpinnerColumn(),
@@ -180,19 +192,14 @@ def download(
             total=len(all_icons),
         )
 
-        for icon in all_icons:
-            file_path = filename_map[icon.id]
-            success = download_icon(
-                icon,
-                file_path,
-                int(size),
-                progress,
-                task,
-            )
-            if success:
-                downloaded_count += 1
-            else:
-                failed_count += 1
+        downloaded_count, failed_count = download_icons_parallel(
+            all_icons,
+            filename_map,
+            int(size),
+            progress,
+            task,
+            max_workers=workers,
+        )
 
     # Summary
     console.print()
