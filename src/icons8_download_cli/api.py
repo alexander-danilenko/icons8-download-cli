@@ -5,6 +5,7 @@ from typing import Callable, Optional
 
 import requests
 
+from icons8_download_cli.cache import read_cache, write_cache
 from icons8_download_cli.models import Icon, IconResponse
 
 logger = logging.getLogger(__name__)
@@ -17,6 +18,7 @@ def fetch_all_icons(
     style: Optional[str] = None,
     query: Optional[str] = None,
     progress_callback: Optional[Callable[[int], None]] = None,
+    use_cache: bool = True,
 ) -> list[Icon]:
     """
     Fetch all icons from Icons8 API with pagination.
@@ -24,6 +26,8 @@ def fetch_all_icons(
     Args:
         style: Optional style filter
         query: Optional search query term
+        progress_callback: Optional callback function for progress updates
+        use_cache: Whether to use cached responses (default: True)
 
     Returns:
         List of all Icon objects collected across all pages
@@ -48,11 +52,29 @@ def fetch_all_icons(
         if query:
             params["term"] = query
 
-        try:
-            response = requests.get(API_BASE_URL, params=params, timeout=30)
-            response.raise_for_status()
+        # Construct full URL for cache key
+        prepared_request = requests.PreparedRequest()
+        prepared_request.prepare_url(API_BASE_URL, params)
+        full_url = prepared_request.url or API_BASE_URL
 
-            api_response = IconResponse.model_validate(response.json())
+        try:
+            # Check cache first
+            cached_data = None
+            if use_cache:
+                cached_data = read_cache(full_url)
+
+            if cached_data:
+                api_response = IconResponse.model_validate(cached_data)
+            else:
+                response = requests.get(API_BASE_URL, params=params, timeout=30)
+                response.raise_for_status()
+                response_json = response.json()
+
+                # Cache the response
+                if use_cache:
+                    write_cache(full_url, response_json)
+
+                api_response = IconResponse.model_validate(response_json)
 
             if not api_response.success:
                 logger.warning(

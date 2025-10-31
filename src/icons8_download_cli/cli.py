@@ -160,7 +160,7 @@ def setup_file_logging(target_directory: Path) -> None:
         target_directory: Directory where log file will be created
     """
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    log_file = target_directory / f"download-log-{timestamp}.log"
+    log_file = target_directory / f"icons8-download-log-{timestamp}.log"
 
     logging.basicConfig(
         level=logging.INFO,
@@ -205,12 +205,19 @@ def setup_file_logging(target_directory: Path) -> None:
     default=10,
     help="Number of parallel download threads (default: 10)",
 )
+@click.option(
+    "--no-cache",
+    is_flag=True,
+    default=False,
+    help="Disable response caching",
+)
 def download(
     target_directory: Path | None,
     size: str,
     style: str | None,
     query: str | None,
     workers: int,
+    no_cache: bool,
 ) -> None:
     """
     Download icons from Icons8.com API.
@@ -275,6 +282,7 @@ def download(
                 style=style,
                 query=query,
                 progress_callback=update_progress,
+                use_cache=not no_cache,
             )
             progress.update(
                 task,
