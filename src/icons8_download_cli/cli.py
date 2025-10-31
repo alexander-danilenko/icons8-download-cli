@@ -1,6 +1,8 @@
 """CLI entry point and command definitions."""
 
 import logging
+import os
+import platform
 from datetime import datetime
 from pathlib import Path
 
@@ -21,14 +23,133 @@ SIZE_CHOICES = click.Choice(["24", "48", "96", "192", "384", "512"], case_sensit
 
 def get_default_downloads_dir() -> Path:
     """
-    Get OS-specific Downloads directory.
+    Get OS-specific Downloads directory respecting non-standard paths.
+
+    Handles:
+    - Windows: Uses Windows API to get actual Downloads folder location
+    - Linux: Checks XDG_DOWNLOAD_DIR environment variable, falls back to ~/Downloads
+    - macOS: Uses ~/Downloads (standard location, can be overridden in Finder)
 
     Returns:
         Path to Downloads directory
     """
-    downloads_dir = Path.home() / "Downloads"
+    system = platform.system()
+
+    if system == "Windows":
+        downloads_dir = _get_windows_downloads_dir()
+    elif system == "Linux":
+        downloads_dir = _get_linux_downloads_dir()
+    elif system == "Darwin":  # macOS
+        downloads_dir = _get_macos_downloads_dir()
+    else:
+        # Fallback for unknown systems
+        downloads_dir = Path.home() / "Downloads"
+
     downloads_dir.mkdir(parents=True, exist_ok=True)
     return downloads_dir
+
+
+def _get_windows_downloads_dir() -> Path:
+    """
+    Get Windows Downloads directory using Windows API.
+
+    Uses SHGetKnownFolderPath with FOLDERID_Downloads to get the actual
+    Downloads folder location, even if it's been moved from default.
+
+    Returns:
+        Path to Downloads directory
+    """
+    try:
+        import ctypes
+        from ctypes import wintypes
+
+        # FOLDERID_Downloads GUID: {374DE290-123F-4565-9164-39C4925E467B}
+        # Create GUID structure
+        class GUID(ctypes.Structure):
+            _fields_ = [
+                ("Data1", wintypes.DWORD),
+                ("Data2", wintypes.WORD),
+                ("Data3", wintypes.WORD),
+                ("Data4", ctypes.c_byte * 8),
+            ]
+
+        # Parse GUID string into GUID structure
+        guid_str = "{374DE290-123F-4565-9164-39C4925E467B}"
+        guid = GUID()
+        guid.Data1 = int(guid_str[1:9], 16)
+        guid.Data2 = int(guid_str[10:14], 16)
+        guid.Data3 = int(guid_str[15:19], 16)
+        guid.Data4[0] = int(guid_str[20:22], 16)
+        guid.Data4[1] = int(guid_str[22:24], 16)
+        for i in range(2, 8):
+            guid.Data4[i] = int(guid_str[25 + (i - 2) * 2 : 27 + (i - 2) * 2], 16)
+
+        # Load shell32.dll and ole32.dll
+        shell32 = ctypes.windll.shell32
+        ole32 = ctypes.windll.ole32
+
+        # Define SHGetKnownFolderPath function signature
+        shell32.SHGetKnownFolderPath.argtypes = [
+            ctypes.POINTER(GUID),  # rfid (GUID pointer)
+            wintypes.DWORD,        # dwFlags
+            wintypes.HANDLE,       # hToken
+            ctypes.POINTER(ctypes.c_wchar_p),  # ppszPath
+        ]
+        shell32.SHGetKnownFolderPath.restype = wintypes.HRESULT
+
+        # Call SHGetKnownFolderPath
+        path_ptr = ctypes.c_wchar_p()
+        result = shell32.SHGetKnownFolderPath(
+            ctypes.byref(guid),
+            0,
+            None,
+            ctypes.byref(path_ptr),
+        )
+
+        if result == 0:  # S_OK
+            downloads_path = path_ptr.value
+            ole32.CoTaskMemFree(path_ptr)
+            if downloads_path:
+                return Path(downloads_path)
+
+    except (OSError, AttributeError, ValueError, ImportError):
+        # Fallback if Windows API fails or ctypes not available
+        pass
+
+    # Fallback to default location
+    return Path.home() / "Downloads"
+
+
+def _get_linux_downloads_dir() -> Path:
+    """
+    Get Linux Downloads directory respecting XDG user directories.
+
+    Checks XDG_DOWNLOAD_DIR environment variable first, then falls back
+    to ~/Downloads per XDG Base Directory Specification.
+
+    Returns:
+        Path to Downloads directory
+    """
+    # Check XDG_DOWNLOAD_DIR environment variable
+    xdg_download_dir = os.environ.get("XDG_DOWNLOAD_DIR")
+    if xdg_download_dir:
+        return Path(xdg_download_dir)
+
+    # Fallback to default location
+    return Path.home() / "Downloads"
+
+
+def _get_macos_downloads_dir() -> Path:
+    """
+    Get macOS Downloads directory.
+
+    On macOS, the Downloads folder is typically ~/Downloads, but users
+    can move it in Finder. This function uses the standard location.
+
+    Returns:
+        Path to Downloads directory
+    """
+    return Path.home() / "Downloads"
 
 
 def setup_file_logging(target_directory: Path) -> None:
