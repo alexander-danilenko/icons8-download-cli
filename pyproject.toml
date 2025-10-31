@@ -1,0 +1,19 @@
+[project]
+name = "icons8-download-cli"
+version = "0.1.0"
+description = "CLI tool for downloading icons from Icons8.com"
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.1.0",
+    "requests>=2.31.0",
+    "pydantic>=2.5.0",
+    "rich>=13.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+download = "icons8_download_cli.cli:main"
+
