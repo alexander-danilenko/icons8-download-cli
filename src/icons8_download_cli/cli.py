@@ -177,36 +177,42 @@ def setup_file_logging(target_directory: Path) -> None:
 @click.command()
 @click.option(
     "--target-directory",
+    "-d",
     type=click.Path(exists=False, file_okay=False, dir_okay=True, path_type=Path),
     default=None,
     help="Target directory for downloaded icons (defaults to Downloads)",
 )
 @click.option(
     "--size",
+    "-s",
     type=SIZE_CHOICES,
     default="512",
     help="Icon size (default: 512)",
 )
 @click.option(
     "--style",
+    "-S",
     type=str,
     default=None,
     help="Icon style filter",
 )
 @click.option(
     "--query",
+    "-q",
     type=str,
     default=None,
     help="Search query term (required if style is not provided)",
 )
 @click.option(
     "--workers",
+    "-w",
     type=int,
     default=10,
     help="Number of parallel download threads (default: 10)",
 )
 @click.option(
     "--no-cache",
+    "-C",
     is_flag=True,
     default=False,
     help="Disable response caching",
