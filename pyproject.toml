@@ -3,6 +3,10 @@ name = "icons8-download-cli"
 version = "0.1.0"
 description = "CLI tool for downloading icons from Icons8.com"
 requires-python = ">=3.14"
+license = { text = "MIT" }
+authors = [
+    { name = "Alexander Danilenko" }
+]
 dependencies = [
     "click>=8.1.0",
     "requests>=2.31.0",
