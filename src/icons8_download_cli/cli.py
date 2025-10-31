@@ -197,13 +197,6 @@ def setup_file_logging(target_directory: Path) -> None:
     help="Icon style filter",
 )
 @click.option(
-    "--query",
-    "-q",
-    type=str,
-    default=None,
-    help="Search query term (required if style is not provided)",
-)
-@click.option(
     "--workers",
     "-w",
     type=int,
@@ -221,14 +214,13 @@ def download(
     target_directory: Path | None,
     size: str,
     style: str | None,
-    query: str | None,
     workers: int,
     no_cache: bool,
 ) -> None:
     """
     Download icons from Icons8.com API.
 
-    Either --style or --query must be provided.
+    --style must be provided.
     """
     # Determine target directory
     if target_directory is None:
@@ -237,10 +229,10 @@ def download(
         target_directory = Path(target_directory).resolve()
         target_directory.mkdir(parents=True, exist_ok=True)
 
-    # Validate that either style or query is provided
-    if not style and not query:
+    # Validate that style is provided
+    if not style:
         console.print(
-            "[red]Error:[/red] Either --style or --query must be provided",
+            "[red]Error:[/red] --style must be provided",
         )
         raise click.Abort()
 
@@ -250,20 +242,16 @@ def download(
     logger = logging.getLogger(__name__)
     logger.info("Starting download to: %s", target_directory)
     logger.info(
-        "Parameters: size=%s, style=%s, query=%s, workers=%s",
+        "Parameters: size=%s, style=%s, workers=%s",
         size,
         style,
-        query,
         workers,
     )
 
     console.print(f"\n[bold]Icons8 Download CLI[/bold]")
     console.print(f"Target directory: [cyan]{target_directory}[/cyan]")
     console.print(f"Size: [cyan]{size}[/cyan]px")
-    if style:
-        console.print(f"Style: [cyan]{style}[/cyan]")
-    if query:
-        console.print(f"Query: [cyan]{query}[/cyan]")
+    console.print(f"Style: [cyan]{style}[/cyan]")
     console.print(f"Parallel workers: [cyan]{workers}[/cyan]")
     console.print()
 
@@ -286,7 +274,6 @@ def download(
 
             all_icons = fetch_all_icons(
                 style=style,
-                query=query,
                 progress_callback=update_progress,
                 use_cache=not no_cache,
             )

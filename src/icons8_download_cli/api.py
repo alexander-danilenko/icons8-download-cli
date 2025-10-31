@@ -16,7 +16,6 @@ PAGE_SIZE = 100
 
 def fetch_all_icons(
     style: Optional[str] = None,
-    query: Optional[str] = None,
     progress_callback: Optional[Callable[[int], None]] = None,
     use_cache: bool = True,
 ) -> list[Icon]:
@@ -25,7 +24,6 @@ def fetch_all_icons(
 
     Args:
         style: Optional style filter
-        query: Optional search query term
         progress_callback: Optional callback function for progress updates
         use_cache: Whether to use cached responses (default: True)
 
@@ -49,8 +47,6 @@ def fetch_all_icons(
 
         if style:
             params["style"] = style
-        if query:
-            params["term"] = query
 
         # Construct full URL for cache key
         prepared_request = requests.PreparedRequest()
@@ -64,8 +60,13 @@ def fetch_all_icons(
                 cached_data = read_cache(full_url)
 
             if cached_data:
+                logger.info("API request (cache hit): %s", full_url)
                 api_response = IconResponse.model_validate(cached_data)
             else:
+                if use_cache:
+                    logger.info("API request (cache miss): %s", full_url)
+                else:
+                    logger.info("API request: %s", full_url)
                 response = requests.get(API_BASE_URL, params=params, timeout=30)
                 response.raise_for_status()
                 response_json = response.json()
