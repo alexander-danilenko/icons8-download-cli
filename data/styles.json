@@ -2,613 +2,491 @@
   "styles": [
     {
       "id": "3d-fluency",
-      "label": "3D Fluency",
-      "image_url": "https://img-main.icons8.com/3d-fluency/48/home.png"
+      "label": "3D Fluency"
     },
     {
       "id": "3d-plastilina",
-      "label": "3D Plastilina",
-      "image_url": "https://img-main.icons8.com/3d-plastilina/48/home.png"
+      "label": "3D Plastilina"
     },
     {
       "id": "Dusk_Wired",
-      "label": "Cute Outline",
-      "image_url": "https://img-main.icons8.com/wired/2x/home.png"
+      "label": "Cute Outline"
     },
     {
       "id": "android",
-      "label": "Ice Cream",
-      "image_url": "https://img-main.icons8.com/android/2x/home.png"
+      "label": "Ice Cream"
     },
     {
       "id": "androidL",
-      "label": "Material Filled",
-      "image_url": "https://img-main.icons8.com/material/2x/home.png"
+      "label": "Material Filled"
     },
     {
       "id": "arcade",
-      "label": "Arcade",
-      "image_url": "https://maxcdn.icons8.com/style-preview/1713fb15-eaad-40ae-ba1c-d8f02c451512.png"
+      "label": "Arcade"
     },
     {
       "id": "avantgarde",
-      "label": "Avantgarde",
-      "image_url": "https://maxcdn.icons8.com/style-preview/9397d03a-3788-4e9f-9c35-cc4d1fc72a6d.png"
+      "label": "Avantgarde"
     },
     {
       "id": "badges",
-      "label": "Badges",
-      "image_url": "https://maxcdn.icons8.com/style-preview/5dd9d34a-7e38-4d86-aa1c-0278a848d142.png"
+      "label": "Badges"
     },
     {
       "id": "bubbles",
-      "label": "Bubbles",
-      "image_url": "https://img-main.icons8.com/bubbles/2x/home.png"
+      "label": "Bubbles"
     },
     {
       "id": "carbon_copy",
-      "label": "Outline Hand Drawn",
-      "image_url": "https://img-main.icons8.com/carbon-copy/2x/home.png"
+      "label": "Outline Hand Drawn"
     },
     {
       "id": "clouds",
-      "label": "Cloud",
-      "image_url": "https://img-main.icons8.com/clouds/2x/home.png"
+      "label": "Cloud"
     },
     {
       "id": "clr-gls",
-      "label": "Color Glass",
-      "image_url": "https://img-main.icons8.com/color-glass/2x/home.png"
+      "label": "Color Glass"
     },
     {
       "id": "color",
-      "label": "Color",
-      "image_url": "https://img-main.icons8.com/color/2x/home.png"
+      "label": "Color"
     },
     {
       "id": "color-pixels",
-      "label": "Color Pixels",
-      "image_url": "https://maxcdn.icons8.com/style-preview/6bebe548-5f05-4080-9e9d-836ac8d2043e.png"
+      "label": "Color Pixels"
     },
     {
       "id": "comic",
-      "label": "Comic",
-      "image_url": "https://maxcdn.icons8.com/style-preview/7df92464-fc7d-4d6f-9e49-de057ec8707d.png"
+      "label": "Comic"
     },
     {
       "id": "connect",
-      "label": "Connect",
-      "image_url": "https://maxcdn.icons8.com/style-preview/0db682f1-dc0f-4ae4-a737-1b09b07b6a9f.png"
+      "label": "Connect"
     },
     {
       "id": "connect-color",
-      "label": "Connect Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d5751e61-0b6c-4d3c-a647-4151dfae6f12.png"
+      "label": "Connect Color"
     },
     {
       "id": "cool",
-      "label": "Cute Clipart",
-      "image_url": "https://img-main.icons8.com/cute-clipart/2x/home.png"
+      "label": "Cute Clipart"
     },
     {
       "id": "cotton",
-      "label": "Pastel Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/6f473439-ab2b-4708-b1ea-e37b8153cf7e.png"
+      "label": "Pastel Color"
     },
     {
       "id": "deco",
-      "label": "Deco Duotone",
-      "image_url": "https://maxcdn.icons8.com/style-preview/c4a9262f-a952-4ea4-ae53-8a5dd4b98442.png"
+      "label": "Deco Duotone"
     },
     {
       "id": "deco-color",
-      "label": "Deco Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d1155f3e-5ed4-49cb-8403-1d1281b16348.png"
+      "label": "Deco Color"
     },
     {
       "id": "deco-glyph",
-      "label": "Deco Glyph",
-      "image_url": "https://maxcdn.icons8.com/style-preview/0f832638-2343-48b2-b201-e5471ef6dda7.png"
+      "label": "Deco Glyph"
     },
     {
       "id": "doodle",
-      "label": "Doodle",
-      "image_url": "https://img-main.icons8.com/doodle/2x/home.png"
+      "label": "Doodle"
     },
     {
       "id": "doodle-line",
-      "label": "Doodle Line",
-      "image_url": "https://maxcdn.icons8.com/style-preview/15888592-5f4c-4de2-920e-639297819b56.png"
+      "label": "Doodle Line"
     },
     {
       "id": "dotty",
-      "label": "Dotted",
-      "image_url": "https://img-main.icons8.com/dotty/2x/home.png"
+      "label": "Dotted"
     },
     {
       "id": "dusk",
-      "label": "Cute Color",
-      "image_url": "https://img-main.icons8.com/dusk/2x/home.png"
+      "label": "Cute Color"
     },
     {
       "id": "emoji",
-      "label": "Emoji",
-      "image_url": "https://img.icons8.com/emoji/48/house-emoji.png"
+      "label": "Emoji"
     },
     {
       "id": "flat_round",
-      "label": "Infographic",
-      "image_url": "https://img-main.icons8.com/flat-round/2x/home.png"
+      "label": "Infographic"
     },
     {
       "id": "fluent",
-      "label": "Windows 11 Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/f5c16571-621e-4107-894f-5928bd316b06.png"
+      "label": "Windows 11 Color"
     },
     {
       "id": "fluent-systems-filled",
-      "label": "Windows 11 Filled",
-      "image_url": "https://img-main.icons8.com/fluency-systems-filled/2x/home.png"
+      "label": "Windows 11 Filled"
     },
     {
       "id": "fluent-systems-regular",
-      "label": "Windows 11 Outline",
-      "image_url": "https://img-main.icons8.com/fluency-systems-regular/2x/home.png"
+      "label": "Windows 11 Outline"
     },
     {
       "id": "forma-bold",
-      "label": "Forma Bold",
-      "image_url": "https://maxcdn.icons8.com/style-preview/96b4f6c2-084f-48e5-b3e1-17e29ccf7c8a.png"
+      "label": "Forma Bold"
     },
     {
       "id": "forma-bold-filled",
-      "label": "Forma Bold Filled",
-      "image_url": "https://maxcdn.icons8.com/style-preview/faf1452f-9d4f-46f5-9a0e-c59b8ebea994.png"
+      "label": "Forma Bold Filled"
     },
     {
       "id": "forma-bold-filled-sharp",
-      "label": "Forma Bold Filled Sharp",
-      "image_url": "https://api-img.icons8.com/forma-bold-filled-sharp/home.svg?fromSite=true"
+      "label": "Forma Bold Filled Sharp"
     },
     {
       "id": "forma-bold-sharp",
-      "label": "Forma Bold Sharp",
-      "image_url": "https://api-img.icons8.com/forma-bold-sharp/home.svg?fromSite=true"
+      "label": "Forma Bold Sharp"
     },
     {
       "id": "forma-light",
-      "label": "Forma Light",
-      "image_url": "https://maxcdn.icons8.com/style-preview/a65b563c-87c4-4f44-a500-6776fd41f26b.png"
+      "label": "Forma Light"
     },
     {
       "id": "forma-light-filled",
-      "label": "Forma Light Filled",
-      "image_url": "https://maxcdn.icons8.com/style-preview/5f94c5a4-1145-413a-8907-e0669dadfa07.png"
+      "label": "Forma Light Filled"
     },
     {
       "id": "forma-light-filled-sharp",
-      "label": "Forma Light Filled Sharp",
-      "image_url": "https://api-img.icons8.com/forma-light-filled-sharp/home.svg?fromSite=true"
+      "label": "Forma Light Filled Sharp"
     },
     {
       "id": "forma-light-sharp",
-      "label": "Forma Light Sharp",
-      "image_url": "https://api-img.icons8.com/forma-light-sharp/home.svg?fromSite=true"
+      "label": "Forma Light Sharp"
     },
     {
       "id": "forma-regular",
-      "label": "Forma Regular",
-      "image_url": "https://maxcdn.icons8.com/style-preview/88a4d845-432b-4b98-b2fd-1eb025986e96.png"
+      "label": "Forma Regular"
     },
     {
       "id": "forma-regular-filled",
-      "label": "Forma Regular Filled",
-      "image_url": "https://maxcdn.icons8.com/style-preview/4528a81c-904f-4adf-89ca-bee6101e5012.png"
+      "label": "Forma Regular Filled"
     },
     {
       "id": "forma-regular-filled-sharp",
-      "label": "Forma Regular Filled Sharp",
-      "image_url": "https://api-img.icons8.com/forma-regular-filled-sharp/home.svg?fromSite=true"
+      "label": "Forma Regular Filled Sharp"
     },
     {
       "id": "forma-regular-sharp",
-      "label": "Forma Regular Sharp",
-      "image_url": "https://api-img.icons8.com/forma-regular-sharp/home.svg?fromSite=true"
+      "label": "Forma Regular Sharp"
     },
     {
       "id": "forma-thin",
-      "label": "Forma Thin",
-      "image_url": "https://maxcdn.icons8.com/style-preview/8329df8f-8ca2-41d0-8474-cddebf60cd66.png"
+      "label": "Forma Thin"
     },
     {
       "id": "forma-thin-filled",
-      "label": "Forma Thin Filled",
-      "image_url": "https://maxcdn.icons8.com/style-preview/98c7be7f-cc7f-4a77-a241-0bde8eb26b0d.png"
+      "label": "Forma Thin Filled"
     },
     {
       "id": "forma-thin-filled-sharp",
-      "label": "Forma Thin Filled Sharp",
-      "image_url": "https://api-img.icons8.com/forma-thin-filled-sharp/home.svg?fromSite=true"
+      "label": "Forma Thin Filled Sharp"
     },
     {
       "id": "forma-thin-sharp",
-      "label": "Forma Thin Sharp",
-      "image_url": "https://api-img.icons8.com/forma-thin-sharp/home.svg?fromSite=true"
+      "label": "Forma Thin Sharp"
     },
     {
       "id": "glassmorphism",
-      "label": "Glassmorphism",
-      "image_url": "https://maxcdn.icons8.com/style-preview/6962fb7c-f28a-49ba-8ca6-d330692399af.png"
+      "label": "Glassmorphism"
     },
     {
       "id": "glyph-neue",
-      "label": "Glyph Neue",
-      "image_url": "https://img-main.icons8.com/glyph-neue/2x/home.png"
+      "label": "Glyph Neue"
     },
     {
       "id": "hands",
-      "label": "Handsy",
-      "image_url": "https://maxcdn.icons8.com/style-preview/c3539d25-5cc8-48fe-ba65-3a8a6ffed806.png"
+      "label": "Handsy"
     },
     {
       "id": "hatch",
-      "label": "Hatch",
-      "image_url": "https://maxcdn.icons8.com/style-preview/fb9a455a-4af0-4cda-8557-60bf198d1ae9.png"
+      "label": "Hatch"
     },
     {
       "id": "hieroglyphs",
-      "label": "Hieroglyphs",
-      "image_url": "https://maxcdn.icons8.com/style-preview/7200f7fb-e932-4eff-99fa-bbbfe951c3cf.png"
+      "label": "Hieroglyphs"
     },
     {
       "id": "ink",
-      "label": "Ink",
-      "image_url": "https://maxcdn.icons8.com/style-preview/0a71bbbe-30d5-4f34-b02f-62ac9543b963.png"
+      "label": "Ink"
     },
     {
       "id": "ios11",
-      "label": "iOS 17 Glyph",
-      "image_url": "https://img-main.icons8.com/ios-glyphs/2x/home.png"
+      "label": "iOS 17 Glyph"
     },
     {
       "id": "ios7",
-      "label": "iOS 17 Outlined",
-      "image_url": "https://img-main.icons8.com/ios/2x/home.png"
+      "label": "iOS 17 Outlined"
     },
     {
       "id": "ios_filled",
-      "label": "iOS 17 Filled",
-      "image_url": "https://img-main.icons8.com/ios-filled/2x/home.png"
+      "label": "iOS 17 Filled"
     },
     {
       "id": "isometric",
-      "label": "Isometric Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/c51f8561-afad-4d8e-9e8a-6ba62751fafb.png"
+      "label": "Isometric Color"
     },
     {
       "id": "isometric-line",
-      "label": "Isometric Line",
-      "image_url": "https://maxcdn.icons8.com/style-preview/ad23fe3c-b838-4fcc-b0e7-1171d18ba344.png"
+      "label": "Isometric Line"
     },
     {
       "id": "keek",
-      "label": "Keek",
-      "image_url": "https://maxcdn.icons8.com/style-preview/92121748-56b1-47b9-b453-6371470983fd.png"
+      "label": "Keek"
     },
     {
       "id": "laces",
-      "label": "Laces",
-      "image_url": "https://maxcdn.icons8.com/style-preview/87c7322d-d556-4fc4-be17-e0953e9618a9.png"
+      "label": "Laces"
     },
     {
       "id": "led",
-      "label": "LED",
-      "image_url": "https://maxcdn.icons8.com/style-preview/01b12524-65ff-4f33-a4a9-c8dbbba68990.png"
+      "label": "LED"
     },
     {
       "id": "liquid-glass",
-      "label": "Liquid Glass",
-      "image_url": "https://maxcdn.icons8.com/style-preview/3e37121c-71a9-42b1-8cc7-a085b4bdf46f.png"
+      "label": "Liquid Glass"
     },
     {
       "id": "liquid-glass-color",
-      "label": "Liquid Glass Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/a5c392d2-b8b3-438b-82b8-9879d5d28165.png"
+      "label": "Liquid Glass Color"
     },
     {
       "id": "lollipop",
-      "label": "Lollipop",
-      "image_url": "https://maxcdn.icons8.com/style-preview/a932e7d8-0b59-48fc-b00c-00482c1d5b6c.png"
+      "label": "Lollipop"
     },
     {
       "id": "m_outlined",
-      "label": "Material Outlined",
-      "image_url": "https://img-main.icons8.com/material-outlined/2x/home.png"
+      "label": "Material Outlined"
     },
     {
       "id": "m_rounded",
-      "label": "Material Rounded",
-      "image_url": "https://img-main.icons8.com/material-rounded/2x/home.png"
+      "label": "Material Rounded"
     },
     {
       "id": "m_sharp",
-      "label": "Material Sharp",
-      "image_url": "https://img-main.icons8.com/material-sharp/2x/home.png"
+      "label": "Material Sharp"
     },
     {
       "id": "m_two_tone",
-      "label": "Material Two Tone",
-      "image_url": "https://img-main.icons8.com/material-two-tone/2x/home.png"
+      "label": "Material Two Tone"
     },
     {
       "id": "matisse",
-      "label": "Matisse",
-      "image_url": "https://maxcdn.icons8.com/style-preview/fbf30ff5-ebcb-4acb-8957-e38292cb44b2.png"
+      "label": "Matisse"
     },
     {
       "id": "mini-stickers",
-      "label": "Mini Stickers",
-      "image_url": "https://maxcdn.icons8.com/style-preview/c193394f-27aa-46f6-b324-fa3f97763442.png"
+      "label": "Mini Stickers"
     },
     {
       "id": "neon",
-      "label": "Neon",
-      "image_url": "https://maxcdn.icons8.com/style-preview/f1024114-8072-4726-add2-20be4ba2ec4a.png"
+      "label": "Neon"
     },
     {
       "id": "nolan",
-      "label": "Gradient",
-      "image_url": "https://img-main.icons8.com/nolan/2x/home.png"
+      "label": "Gradient"
     },
     {
       "id": "office16",
-      "label": "Office XS",
-      "image_url": "https://img-main.icons8.com/officexs/2x/home.png"
+      "label": "Office XS"
     },
     {
       "id": "office30",
-      "label": "Office S",
-      "image_url": "https://img-main.icons8.com/offices/2x/home.png"
+      "label": "Office S"
     },
     {
       "id": "office40",
-      "label": "Office M",
-      "image_url": "https://img-main.icons8.com/office/2x/home.png"
+      "label": "Office M"
     },
     {
       "id": "office80",
-      "label": "Office L",
-      "image_url": "https://img-main.icons8.com/officel/2x/home.png"
+      "label": "Office L"
     },
     {
       "id": "p1em",
-      "label": "Simple Small",
-      "image_url": "https://img-main.icons8.com/small/2x/home.png"
+      "label": "Simple Small"
     },
     {
       "id": "papercut",
-      "label": "Papercut",
-      "image_url": "https://maxcdn.icons8.com/style-preview/f461d4e4-f062-447d-a839-26210c73233d.jpeg"
+      "label": "Papercut"
     },
     {
       "id": "parakeet",
-      "label": "Parakeet Color",
-      "image_url": "https://img-main.icons8.com/parakeet/2x/home.png"
+      "label": "Parakeet Color"
     },
     {
       "id": "parakeet-line",
-      "label": "Parakeet Line",
-      "image_url": "https://maxcdn.icons8.com/style-preview/bdb9a706-6e3c-440b-9698-1ecdb3bf0b71.png"
+      "label": "Parakeet Line"
     },
     {
       "id": "pastel_glyph",
-      "label": "Pastel Glyph",
-      "image_url": "https://maxcdn.icons8.com/style-preview/803f4221-cf38-4767-9632-333ec1bcfc48.png"
+      "label": "Pastel Glyph"
     },
     {
       "id": "pieces",
-      "label": "Pieces",
-      "image_url": "https://maxcdn.icons8.com/style-preview/36fec220-7cc9-45eb-8540-e7665ad876d1.png"
+      "label": "Pieces"
     },
     {
       "id": "pin",
-      "label": "Pin",
-      "image_url": "https://maxcdn.icons8.com/style-preview/e62e1420-5e2d-40ea-8a58-56adb852edb1.png"
+      "label": "Pin"
     },
     {
       "id": "pixels",
-      "label": "Pixels",
-      "image_url": "https://maxcdn.icons8.com/style-preview/515d2d6d-7ac4-429c-9b84-6db7cb835a1a.png"
+      "label": "Pixels"
     },
     {
       "id": "plasticine",
-      "label": "Color Hand Drawn",
-      "image_url": "https://img-main.icons8.com/plasticine/2x/home.png"
+      "label": "Color Hand Drawn"
     },
     {
       "id": "plumpy",
-      "label": "Plumpy",
-      "image_url": "https://img-main.icons8.com/plumpy/2x/home.png"
+      "label": "Plumpy"
     },
     {
       "id": "poly",
-      "label": "Poly",
-      "image_url": "https://maxcdn.icons8.com/style-preview/6e98519d-40de-4463-b5ec-ab5211e79b89.png"
+      "label": "Poly"
     },
     {
       "id": "puffy",
-      "label": "Puffy Outline",
-      "image_url": "https://maxcdn.icons8.com/style-preview/c659470a-c48d-43bf-ae05-a73b1518af33.png"
+      "label": "Puffy Outline"
     },
     {
       "id": "puffy-filled",
-      "label": "Puffy Filled",
-      "image_url": "https://maxcdn.icons8.com/style-preview/ff652800-57a7-4fdb-85d6-9402fa325085.png"
+      "label": "Puffy Filled"
     },
     {
       "id": "pulsar-color",
-      "label": "Pulsar Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/3057d680-3365-49e4-a86e-00c04a55f91c.png"
+      "label": "Pulsar Color"
     },
     {
       "id": "pulsar-gradient",
-      "label": "Pulsar Gradient",
-      "image_url": "https://maxcdn.icons8.com/style-preview/929b9110-92c3-4cda-bce8-1e8c2b2cc432.png"
+      "label": "Pulsar Gradient"
     },
     {
       "id": "pulsar-line",
-      "label": "Pulsar Line",
-      "image_url": "https://maxcdn.icons8.com/style-preview/419a0680-736f-4290-9bc8-363b8faae7f6.png"
+      "label": "Pulsar Line"
     },
     {
       "id": "quill",
-      "label": "Quill",
-      "image_url": "https://maxcdn.icons8.com/style-preview/9b22c0ea-5859-44e1-9c4d-58e4cb2b2325.png"
+      "label": "Quill"
     },
     {
       "id": "retro",
-      "label": "Retro",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d6f9576a-d8f1-4eb6-8496-151956d87e14.png"
+      "label": "Retro"
     },
     {
       "id": "sci-fi",
-      "label": "Sci-Fi",
-      "image_url": "https://maxcdn.icons8.com/style-preview/79cd706b-9c20-492d-a0b0-34264b955a97.png"
+      "label": "Sci-Fi"
     },
     {
       "id": "scribby",
-      "label": "Scribby",
-      "image_url": "https://maxcdn.icons8.com/style-preview/595e3099-c144-4692-ba90-e7c29aa5b782.png"
+      "label": "Scribby"
     },
     {
       "id": "serif",
-      "label": "Serif",
-      "image_url": "https://maxcdn.icons8.com/style-preview/1f11c37e-615a-4d44-899a-ca63e73e6652.png"
+      "label": "Serif"
     },
     {
       "id": "sf-black",
-      "label": "Apple SF Black",
-      "image_url": "https://img-main.icons8.com/sf-black/2x/home.png"
+      "label": "Apple SF Black"
     },
     {
       "id": "sf-black-filled",
-      "label": "Apple SF Black Filled",
-      "image_url": "https://img-main.icons8.com/sf-black-filled/2x/home.png"
+      "label": "Apple SF Black Filled"
     },
     {
       "id": "sf-regular",
-      "label": "Apple SF Regular",
-      "image_url": "https://img-main.icons8.com/sf-regular/2x/home.png"
+      "label": "Apple SF Regular"
     },
     {
       "id": "sf-regular-filled",
-      "label": "Apple SF Regular Filled",
-      "image_url": "https://img-main.icons8.com/sf-regular-filled/2x/home.png"
+      "label": "Apple SF Regular Filled"
     },
     {
       "id": "sf-ultralight",
-      "label": "Apple SF Ultralight",
-      "image_url": "https://img-main.icons8.com/sf-ultralight/2x/home.png"
+      "label": "Apple SF Ultralight"
     },
     {
       "id": "sf-ultralight-filled",
-      "label": "Apple SF Ultralight Filled",
-      "image_url": "https://img-main.icons8.com/sf-ultralight-filled/2x/home.png"
+      "label": "Apple SF Ultralight Filled"
     },
     {
       "id": "shadow",
-      "label": "Shadow",
-      "image_url": "https://maxcdn.icons8.com/style-preview/8f916a0a-9dc6-4f10-b051-8ec841884e42.png"
+      "label": "Shadow"
     },
     {
       "id": "skeuomorphism",
-      "label": "Skeuomorphism",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d2b9d899-5015-4574-9694-460d685b9c06.png"
+      "label": "Skeuomorphism"
     },
     {
       "id": "softteal",
-      "label": "Softteal",
-      "image_url": "https://maxcdn.icons8.com/style-preview/b50e5924-8e75-4377-9f19-39b37393d67e.png"
+      "label": "Softteal"
     },
     {
       "id": "softteal-color",
-      "label": "Softteal Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/3f3303f2-8a68-409c-995d-30bdb1dd1e1a.png"
+      "label": "Softteal Color"
     },
     {
       "id": "softteal-gradient",
-      "label": "Softteal Gradient",
-      "image_url": "https://maxcdn.icons8.com/style-preview/7522a063-1659-45a8-a83a-8a3172e91ada.png"
+      "label": "Softteal Gradient"
     },
     {
       "id": "stamp",
-      "label": "Stamp",
-      "image_url": "https://maxcdn.icons8.com/style-preview/b4e3d164-3dfc-4b0f-8775-72bb5f486ea5.png"
+      "label": "Stamp"
     },
     {
       "id": "stencil",
-      "label": "Stencil",
-      "image_url": "https://maxcdn.icons8.com/style-preview/151951b1-d634-4539-acad-f5e9a5e8870e.png"
+      "label": "Stencil"
     },
     {
       "id": "stickers",
-      "label": "Stickers",
-      "image_url": "https://img-main.icons8.com/stickers/2x/home.png"
+      "label": "Stickers"
     },
     {
       "id": "stickers-duotone",
-      "label": "Stickers Duotone",
-      "image_url": "https://maxcdn.icons8.com/style-preview/0510bbba-a218-49db-9fa0-cdb67ae578c8.png"
+      "label": "Stickers Duotone"
     },
     {
       "id": "stitch",
-      "label": "Stitch",
-      "image_url": "https://maxcdn.icons8.com/style-preview/8b03ded4-1fc1-4494-a316-3e894c0e0709.png"
+      "label": "Stitch"
     },
     {
       "id": "tapes",
-      "label": "Tapes",
-      "image_url": "https://maxcdn.icons8.com/style-preview/0e45fa3a-7d5a-4bea-b06f-a4141becdafc.png"
+      "label": "Tapes"
     },
     {
       "id": "tiny-bold",
-      "label": "Tiny Bold",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d62792e1-dd77-4dfc-a0d0-40d75ebd194e.png"
+      "label": "Tiny Bold"
     },
     {
       "id": "tiny-color",
-      "label": "Tiny Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d56fc07e-fd7c-4a7e-90a0-b7fc2f58d8d4.png"
+      "label": "Tiny Color"
     },
     {
       "id": "tiny-duotone",
-      "label": "Tiny Bold Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/ada5923e-1e02-4d3a-8be0-0ecb0ef272ba.png"
+      "label": "Tiny Bold Color"
     },
     {
       "id": "tiny-glyph",
-      "label": "Tiny Glyph",
-      "image_url": "https://maxcdn.icons8.com/style-preview/d8665ebc-dd6e-476b-a00e-5cc06aac7b0f.png"
+      "label": "Tiny Glyph"
     },
     {
       "id": "ultraviolet",
-      "label": "Blue UI",
-      "image_url": "https://img-main.icons8.com/ultraviolet/2x/home.png"
+      "label": "Blue UI"
     },
     {
       "id": "water-color",
-      "label": "Water Color",
-      "image_url": "https://maxcdn.icons8.com/style-preview/935a875a-621b-4b57-ad7c-7f4e9ed35ba8.jpeg"
+      "label": "Water Color"
     },
     {
       "id": "win10",
-      "label": "Windows 10",
-      "image_url": "https://img-main.icons8.com/windows/2x/home.png"
+      "label": "Windows 10"
     },
     {
       "id": "win8",
-      "label": "Windows Metro",
-      "image_url": "https://img-main.icons8.com/metro/2x/home.png"
+      "label": "Windows Metro"
     }
   ]
 }
