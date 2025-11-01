@@ -19,5 +19,5 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-download = "icons8_download_cli.cli:main"
+icons8-download = "icons8_download_cli.cli:main"
 
