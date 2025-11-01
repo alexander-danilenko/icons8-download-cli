@@ -27,19 +27,11 @@ A powerful command-line tool for efficiently downloading icons from [Icons8.com]
 
 ## 📦 Installation
 
-### Option 1: Using `uv tool install` (Recommended)
-
-Install directly from the latest GitHub release wheel file:
-
-1. Visit the [latest release page](https://github.com/alexander-danilenko/icons8-download-cli/releases/latest)
-2. Copy the URL of the `.whl` file that matches your Python version (Python 3.14+ required)
-3. Run the installation command:
+### Option 1: Using `uv` (Recommended)
 
 ```bash
-uv tool install icons8-download-cli --from https://github.com/alexander-danilenko/icons8-download-cli/releases/download/v1.0.0/icons8_download_cli-1.0.0-py3-none-any.whl
+uv tool install git+https://github.com/alexander-danilenko/icons8-download-cli
 ```
-
-Replace the URL above with the actual wheel file URL from the latest release.
 
 ### Option 2: Using pip
 
@@ -65,7 +57,7 @@ Replace the URL above with the actual wheel file URL from the latest release.
 Download icons filtered by a specific style:
 
 ```bash
-uv run icons8-download --style ios
+icons8-download --style ios
 ```
 
 ### ⚙️ Command Options
@@ -97,13 +89,13 @@ The [styles.json](./data/styles.json) file contains all available styles. To dow
 **Linux/macOS (Bash):**
 
 ```bash
-cat ./data/styles.json | jq -r '.styles[] | "\(.id)|\(.label)"' | while IFS='|' read -r id label; do uv run icons8-download --style "$id" --target-directory "./data/icons/$label"; done
+cat ./data/styles.json | jq -r '.styles[] | "\(.id)|\(.label)"' | while IFS='|' read -r id label; do icons8-download --style "$id" --target-directory "./data/icons/$label"; done
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-Get-Content ./data/styles.json | ConvertFrom-Json | Select-Object -ExpandProperty styles | ForEach-Object { uv run icons8-download --style $_.id --target-directory ".\data\icons\$($_.label)" }
+Get-Content ./data/styles.json | ConvertFrom-Json | Select-Object -ExpandProperty styles | ForEach-Object { icons8-download --style $_.id --target-directory ".\data\icons\$($_.label)" }
 ```
 
 ## 🤝 Contributing
