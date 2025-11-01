@@ -7,15 +7,28 @@ from datetime import datetime
 from pathlib import Path
 
 import click
-from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
-from rich.table import Table
 
 from icons8_download_cli.api import fetch_all_icons
 from icons8_download_cli.downloader import download_icons_parallel, resolve_filenames
 from icons8_download_cli.models import Icon
 
-console = Console()
+
+def _get_console():
+    """Lazy import rich console to avoid slow startup."""
+    from rich.console import Console
+    return Console()
+
+
+def _get_progress():
+    """Lazy import rich progress components."""
+    from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
+    return Progress, SpinnerColumn, TextColumn, BarColumn
+
+
+def _get_table():
+    """Lazy import rich table."""
+    from rich.table import Table
+    return Table
 
 
 def get_version() -> str:
@@ -275,6 +288,11 @@ def download(
     else:
         target_directory = Path(target_directory).resolve()
         target_directory.mkdir(parents=True, exist_ok=True)
+
+    # Lazy load rich components (only when actually needed)
+    console = _get_console()
+    Progress, SpinnerColumn, TextColumn, BarColumn = _get_progress()
+    Table = _get_table()
 
     # Validate that style is provided
     if not style:
