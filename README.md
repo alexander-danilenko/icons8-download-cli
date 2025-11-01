@@ -80,7 +80,7 @@ You can find style values directly from the Icons8 website. When browsing icons 
 - **URL format**: `https://icons8.com/icons/all--style-<STYLE_VALUE>`
 - **Example**: `https://icons8.com/icons/all--style-fluency` → use `fluency` as the style value
 
-Alternatively, you can browse the complete list of available styles in the [styles.json](https://raw.githubusercontent.com/alexander-danilenko/icons8-download-cli/refs/heads/main/data/styles.json) file.
+Alternatively, you can browse the complete list of available styles in the [styles.json](./data/styles.json) file.
 
 ### ⬇️ Downloading All Styles
 
