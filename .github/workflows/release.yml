@@ -31,15 +31,6 @@ jobs:
       - name: Display built artifacts
         run: ls -lh dist/
 
-      - name: Create latest wheel symlink
-        run: |
-          WHEEL_FILE=$(ls dist/*.whl | head -n 1)
-          WHEEL_NAME=$(basename "$WHEEL_FILE")
-          # Extract package name and create a consistent "latest" filename
-          LATEST_WHEEL="icons8_download_cli-latest-py3-none-any.whl"
-          cp "$WHEEL_FILE" "dist/$LATEST_WHEEL"
-          echo "Created latest wheel: dist/$LATEST_WHEEL"
-
       - name: Get release tag
         id: get_tag
         run: |
