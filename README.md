@@ -14,8 +14,11 @@ A powerful command-line tool for efficiently downloading icons from [Icons8.com]
 - 🛡️ **Filename Conflict Resolution**: Automatically handles duplicate filenames to prevent overwrites
 - 🖼️ **PNG Format**: Downloads PNG format icons (free format available on Icons8)
 
-> [!IMPORTANT]
-> CSV format is not supported. Only PNG format downloads are available.
+> [!WARNING]
+> - This tool uses the public, undocumented Icons8 website API (not the official Icons8 API). 
+> - No API token is required or supported.
+> - **Only icons can be downloaded** - illustrations, stock photos, and other content types are not supported. 
+> - Downloads are limited to PNG format only.
 
 ## 📋 Requirements
 
