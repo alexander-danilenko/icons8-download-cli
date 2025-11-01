@@ -1,0 +1,64 @@
+name: Build and Release
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to build (from pyproject.toml)"
+        required: false
+
+jobs:
+  build-and-release:
+    name: Build wheel and create release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Build wheel
+        run: uv build
+
+      - name: Display built artifacts
+        run: ls -lh dist/
+
+      - name: Create latest wheel symlink
+        run: |
+          WHEEL_FILE=$(ls dist/*.whl | head -n 1)
+          WHEEL_NAME=$(basename "$WHEEL_FILE")
+          # Extract package name and create a consistent "latest" filename
+          LATEST_WHEEL="icons8_download_cli-latest-py3-none-any.whl"
+          cp "$WHEEL_FILE" "dist/$LATEST_WHEEL"
+          echo "Created latest wheel: dist/$LATEST_WHEEL"
+
+      - name: Get release tag
+        id: get_tag
+        run: |
+          if [ "${{ github.event_name }}" == "release" ]; then
+            echo "tag=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            # Extract tag from version in pyproject.toml for workflow_dispatch
+            VERSION=$(grep '^version =' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+            echo "tag=v${VERSION}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Attach wheels to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.whl
+          tag_name: ${{ steps.get_tag.outputs.tag }}
+          generate_release_notes: ${{ github.event_name == 'workflow_dispatch' }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
