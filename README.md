@@ -80,25 +80,25 @@ You can find style values directly from the Icons8 website. When browsing icons 
 - **URL format**: `https://icons8.com/icons/all--style-<STYLE_VALUE>`
 - **Example**: `https://icons8.com/icons/all--style-fluency` → use `fluency` as the style value
 
-Alternatively, you can browse the complete list of available styles in the [styles.json](./data/styles.json) file.
+Alternatively, you can browse the complete list of available styles in the [styles.json](https://raw.githubusercontent.com/alexander-danilenko/icons8-download-cli/refs/heads/main/data/styles.json) file.
 
 ### ⬇️ Downloading All Styles
 
 > [!NOTE]
-> Before running scripts below, make sure you have `jq` installed in your system
+> Before running scripts below, make sure you have `jq` installed in your system (Linux/macOS/Windows)
 
 The [styles.json](./data/styles.json) file contains all available styles. To download all styles automatically, use one of the following commands:
 
 **Linux/macOS (Bash):**
 
 ```bash
-cat ./data/styles.json | jq -r '.styles[] | "\(.id)|\(.label)"' | while IFS='|' read -r id label; do icons8-download --style "$id" --target-directory "./data/icons/$label"; done
+curl -s https://raw.githubusercontent.com/alexander-danilenko/icons8-download-cli/refs/heads/main/data/styles.json | jq -r '.styles[] | "\(.id)|\(.label)"' | while IFS='|' read -r id label; do icons8-download --style "$id" --target-directory "./data/icons/$label"; done
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-Get-Content ./data/styles.json | ConvertFrom-Json | Select-Object -ExpandProperty styles | ForEach-Object { icons8-download --style $_.id --target-directory ".\data\icons\$($_.label)" }
+(Invoke-RestMethod -Uri "https://raw.githubusercontent.com/alexander-danilenko/icons8-download-cli/refs/heads/main/data/styles.json").styles | ForEach-Object { icons8-download --style $_.id --target-directory ".\data\icons\$($_.label)" }
 ```
 
 ## 🤝 Contributing
