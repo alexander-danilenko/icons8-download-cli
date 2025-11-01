@@ -1,6 +1,6 @@
 [project]
 name = "icons8-download-cli"
-version = "0.1.0"
+version = "1.0.0"
 description = "CLI tool for downloading icons from Icons8.com"
 requires-python = ">=3.14"
 license = { text = "MIT" }

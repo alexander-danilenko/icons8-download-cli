@@ -17,6 +17,52 @@ from icons8_download_cli.models import Icon
 
 console = Console()
 
+
+def get_version() -> str:
+    """
+    Get package version from installed package metadata or pyproject.toml.
+
+    Returns:
+        Package version string
+
+    Raises:
+        RuntimeError: If version cannot be determined
+    """
+    # Try to get version from installed package metadata (when installed)
+    try:
+        from importlib.metadata import version
+
+        return version("icons8-download-cli")
+    except ImportError:
+        # Python < 3.8 compatibility (though not needed here)
+        try:
+            from importlib_metadata import version
+
+            return version("icons8-download-cli")
+        except ImportError:
+            pass
+    except Exception:
+        # Package not installed, read from pyproject.toml
+        pass
+
+    # Fallback: read from pyproject.toml (development mode)
+    try:
+        import tomllib
+
+        pyproject_path = Path(__file__).parent.parent.parent / "pyproject.toml"
+        if pyproject_path.exists():
+            with pyproject_path.open("rb") as f:
+                data = tomllib.load(f)
+                return data.get("project", {}).get("version", "unknown")
+    except Exception:
+        pass
+
+    raise RuntimeError("Unable to determine package version")
+
+
+# Get version at module level for use in CLI
+_VERSION = get_version()
+
 # Size choices enum
 SIZE_CHOICES = click.Choice(["24", "48", "96", "192", "384", "512"], case_sensitive=False)
 
@@ -175,6 +221,7 @@ def setup_file_logging(target_directory: Path) -> None:
 
 
 @click.command()
+@click.version_option(version=_VERSION, prog_name="icons8-download")
 @click.option(
     "--target-directory",
     "-d",
