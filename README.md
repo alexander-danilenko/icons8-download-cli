@@ -22,21 +22,41 @@ A powerful command-line tool for efficiently downloading icons from [Icons8.com]
 
 ## 📋 Requirements
 
-- Python 3.10 or higher
-- `uv` package manager ([Installation guide](https://github.com/astral-sh/uv))
+- Python 3.14 or higher
+- `uv` package manager ([Installation guide](https://github.com/astral-sh/uv)) (required for Option 1 installation method)
 
 ## 📦 Installation
 
-1. Clone the repository:
+### Option 1: Using `uv tool install` (Recommended)
+
+Install directly from the latest GitHub release wheel file:
+
+1. Visit the [latest release page](https://github.com/alexander-danilenko/icons8-download-cli/releases/latest)
+2. Copy the URL of the `.whl` file that matches your Python version (Python 3.14+ required)
+3. Run the installation command:
+
 ```bash
-git clone https://github.com/alexander-danilenko/icons8-download-cli.git
-cd icons8-download-cli
+uv tool install icons8-download-cli --from https://github.com/alexander-danilenko/icons8-download-cli/releases/download/v1.0.0/icons8_download_cli-1.0.0-py3-none-any.whl
 ```
 
-2. Install dependencies:
+Replace the URL above with the actual wheel file URL from the latest release.
+
+### Option 2: Using pip
+
+Install using pip, ensuring your Python version matches the requirement (Python 3.14+):
+
+1. Visit the [latest release page](https://github.com/alexander-danilenko/icons8-download-cli/releases/latest)
+2. Copy the URL of the `.whl` file that matches your Python version
+3. Run the installation command:
+
 ```bash
-uv sync
+pip install https://github.com/alexander-danilenko/icons8-download-cli/releases/download/v1.0.0/icons8_download_cli-1.0.0-py3-none-any.whl
 ```
+
+Replace the URL above with the actual wheel file URL from the latest release.
+
+> [!NOTE]
+> Make sure your Python version is 3.14 or higher. You can check your Python version with `python --version` or `python3 --version`.
 
 ## 🎯 Usage
 
